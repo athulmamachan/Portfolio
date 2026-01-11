@@ -4,21 +4,18 @@
 <meta charset="UTF-8">
 <title>Athul Mamachan</title>
 
-<!-- TAB ICON -->
 <link rel="icon" href="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile1.png" type="image/png">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
-  height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#fff;
   color:#111;
-  overflow:hidden;
 }
 
+/* ===== LAYOUT ===== */
 .container{
   display:grid;
   grid-template-columns:35% 65%;
@@ -42,8 +39,8 @@ html,body{
   height:180px;
   border-radius:50%;
   object-fit:cover;
-  margin-bottom:30px;
   border:3px solid #ddd;
+  margin-bottom:30px;
 }
 
 .left h1{font-size:42px;margin-bottom:15px;text-align:center;}
@@ -57,9 +54,9 @@ html,body{
   padding:60px;
 }
 
-.category{margin-bottom:80px}
+.category{margin-bottom:90px}
 
-/* CATEGORY HEAD */
+/* CATEGORY TITLE */
 .category h3{
   font-size:28px;
   display:flex;
@@ -76,17 +73,15 @@ html,body{
   width:10%;
   height:3px;
   background:#111;
-  border-radius:2px;
 }
 
-/* CARD GROUP */
+/* ===== MUSIC / FILM ===== */
 .card-group{
   display:flex;
   gap:20px;
   margin-top:45px;
 }
 
-/* BIG CARD */
 .card-big{
   width:457px;
   height:257px;
@@ -107,14 +102,12 @@ html,body{
   object-fit:cover;
 }
 
-/* SMALL GRID */
 .small-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
 
-/* SMALL CARD */
 .card-small{
   width:220px;
   height:120px;
@@ -122,7 +115,6 @@ html,body{
   overflow:hidden;
   cursor:pointer;
   border:2px solid #ddd;
-  box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 .card-small img{
   width:100%;
@@ -134,30 +126,63 @@ html,body{
   transform:scale(1.12);
 }
 
-/* CONTACT */
+/* ===== REELS ===== */
+.reels-wrapper{
+  margin-top:45px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+.reels-row{
+  display:grid;
+  grid-template-columns:repeat(3,240px);
+  gap:25px;
+}
+
+.reel-card{
+  width:240px;
+  height:420px;
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  border:1.5px solid #ddd;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+  transition:.25s;
+}
+.reel-card:hover{
+  transform:scale(1.04);
+}
+.reel-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ===== CONTACT ===== */
 .contact-section{
   margin-top:120px;
   text-align:center;
 }
+.contact-section h3{
+  font-size:28px;
+  margin-bottom:30px;
+}
 .contact-icons{
-  margin-top:25px;
   display:flex;
   justify-content:center;
   gap:30px;
 }
-.contact-icons a{
-  display:inline-block;
-}
 .contact-icons img{
-  width:50px;
-  height:50px;
-  transition:.25s;
+  width:55px;
+  height:55px;
+  transition:.2s;
 }
 .contact-icons img:hover{
-  transform:scale(1.25);
+  transform:scale(1.2);
 }
 
-/* MODAL */
+/* ===== MODAL ===== */
 .modal{
   display:none;
   position:fixed;
@@ -185,7 +210,6 @@ html,body{
 .modal iframe{
   width:100%;
   height:450px;
-  border-radius:10px;
 }
 .close{
   position:absolute;
@@ -196,33 +220,15 @@ html,body{
   cursor:pointer;
 }
 
-/* MOBILE FIX */
+/* ===== MOBILE FIX ===== */
 @media(max-width:900px){
-  html,body{
-    height:auto;
-    overflow:visible;
-  }
-  .container{
-    grid-template-columns:1fr;
-    height:auto;
-  }
-  .left{
-    position:relative;
-    height:auto;
-    padding:40px 20px;
-  }
-  .right{
-    height:auto;
-    overflow:visible;
-    padding:40px 20px;
-  }
-  .card-group{
-    flex-direction:column;
-  }
-  .card-big,.card-small{
-    width:100%;
-    height:auto;
-  }
+  html,body{overflow:auto}
+  .container{grid-template-columns:1fr;height:auto}
+  .left{position:relative;height:auto;padding:40px 25px}
+  .right{height:auto;overflow:visible;padding:40px 25px}
+  .card-group{flex-direction:column}
+  .reels-row{grid-template-columns:1fr}
+  .reel-card{width:100%;max-width:320px;height:480px;margin:auto}
 }
 </style>
 </head>
@@ -276,17 +282,32 @@ html,body{
 
 <!-- REELS -->
 <div class="category">
-<h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram.gif" width="50"></h3>
-<div class="card-group">
-  <div class="card-big" onclick="openModal('https://www.youtube.com/embed/R3-mUdWXMWU')">
+<h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram.gif" width="45"></h3>
+
+<div class="reels-wrapper">
+<div class="reels-row">
+  <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/R3-mUdWXMWU')">
     <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Reel.jpeg">
   </div>
-  <div class="small-grid">
-    <div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Man.jpeg"></div>
-    <div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Dog.jpeg"></div>
-    <div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Sea.jpeg"></div>
-    <div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Boat.jpeg"></div>
+  <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/LXER9LD1CF4')">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Course.jpeg">
   </div>
+  <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/SQiSDv9lbk4')">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Merry boy.jpeg">
+  </div>
+</div>
+
+<div class="reels-row">
+  <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/52M__lshDjo')">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Ads2.jpeg">
+  </div>
+  <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/526PxhYu5kk')">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Ads1.jpeg">
+  </div>
+  <div class="reel-card" onclick="openModal('https://youtube.com/shorts/GayB9FnuhGs?feature=share')">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Vespera.jpeg">
+  </div>
+</div>
 </div>
 </div>
 
@@ -294,27 +315,18 @@ html,body{
 <div class="contact-section">
 <h3>Contact Me</h3>
 <div class="contact-icons">
-
-<!-- Instagram -->
-<a href="https://www.instagram.com/vespera_films?igsh=OXpodDNwbnF1cjFi" target="_blank">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif">
-</a>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/918848347159" target="_blank">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif">
-</a>
-
-<!-- Gmail -->
-<a href="mailto:athulmamachan159@gmail.com">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif">
-</a>
-
-<!-- LinkedIn -->
-<a href="https://www.linkedin.com/in/athul-mamachan-298234376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif">
-</a>
-
+  <a href="https://www.instagram.com/vespera_films?igsh=OXpodDNwbnF1cjFi" target="_blank">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif">
+  </a>
+  <a href="https://wa.me/918848347159" target="_blank">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif">
+  </a>
+  <a href="mailto:athulmamachan159@gmail.com">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif">
+  </a>
+  <a href="https://www.linkedin.com/in/athul-mamachan-298234376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+    <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif">
+  </a>
 </div>
 </div>
 
@@ -335,14 +347,14 @@ const frame=document.getElementById("videoFrame");
 const content=document.querySelector(".modal-content");
 
 function openModal(url){
- frame.src=url+"?autoplay=1";
- modal.classList.add("show");
- content.classList.add("show");
+  frame.src=url+"?autoplay=1";
+  modal.classList.add("show");
+  content.classList.add("show");
 }
 function closeModal(){
- modal.classList.remove("show");
- content.classList.remove("show");
- setTimeout(()=>frame.src="",300);
+  modal.classList.remove("show");
+  content.classList.remove("show");
+  setTimeout(()=>frame.src="",300);
 }
 </script>
 
