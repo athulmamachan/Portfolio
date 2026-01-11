@@ -3,30 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Athul Mamachan</title>
+<!-- Round favicon -->
 <link rel="icon" href="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile1.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
-  height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#fff;
   color:#111;
-  overflow:hidden;
+  height:100%;
 }
 
+/* GRID CONTAINER */
 .container{
   display:grid;
   grid-template-columns:35% 65%;
-  height:100vh;
+  width:100%;
+  min-height:100vh;
 }
 
-/* LEFT */
+/* LEFT SIDE */
 .left{
   position:sticky;
   top:0;
-  height:100vh;
   padding:60px 40px;
   display:flex;
   flex-direction:column;
@@ -47,16 +48,16 @@ html,body{
 .left h2{font-size:18px;color:#555;margin-bottom:20px;text-align:center;}
 .left p{font-size:18px;color:#555;max-width:320px;text-align:center;}
 
-/* RIGHT */
+/* RIGHT SIDE */
 .right{
-  height:100vh;
-  overflow-y:auto;
   padding:60px;
+  overflow-y:auto;
+  max-height:100vh;
 }
 
+/* CATEGORY */
 .category{margin-bottom:80px}
 
-/* CATEGORY HEAD */
 .category h3{
   font-size:28px;
   display:flex;
@@ -81,6 +82,7 @@ html,body{
   display:flex;
   gap:20px;
   margin-top:45px;
+  flex-wrap:wrap;
 }
 
 /* BIG CARD */
@@ -124,7 +126,7 @@ html,body{
   transition:.25s;
 }
 
-/* SMALL CARD IMAGE – FIXED */
+/* SMALL CARD IMAGE */
 .card-small img{
   width:100%;
   height:100%;
@@ -132,7 +134,7 @@ html,body{
   transition:transform .35s ease;
 }
 
-/* IMAGE ZOOM INSIDE CARD */
+/* ZOOM EFFECT ON HOVER */
 .card-small:hover img{
   transform:scale(1.12);
 }
@@ -143,7 +145,7 @@ html,body{
   text-align:center;
 }
 .contact-icons{
-  margin-top:25px;
+  margin-top:20px;
   display:flex;
   justify-content:center;
   gap:25px;
@@ -198,9 +200,11 @@ html,body{
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .container{grid-template-columns:1fr}
-  .card-group{flex-direction:column}
-  .card-big,.card-small{width:100%;height:auto}
+  .container{grid-template-columns:1fr;}
+  .card-group{flex-direction:column;}
+  .card-big,.card-small{width:100%;height:auto;}
+  .right{padding:40px 20px;}
+  .left{padding:40px 20px;}
 }
 </style>
 </head>
@@ -213,7 +217,7 @@ html,body{
 <aside class="left">
   <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile.jpeg" class="profile">
   <h1>Athul Mamachan</h1>
-  <h2> Video Editor </h2>
+  <h2>Video Editor | Director</h2>
   <p>Turning raw footage into powerful stories with rhythm, emotion, and visual impact.</p>
 </aside>
 
@@ -222,7 +226,7 @@ html,body{
 
 <!-- MUSIC VIDEO -->
 <div class="category">
-<h3>Music Video <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/music icon.gif" width="30"></h3>
+<h3>Music Video <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/music%20icon.gif" width="30"></h3>
 <div class="card-group">
   <div class="card-big" onclick="openModal('https://www.youtube.com/embed/B9TItHSQsy8')">
     <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Queen.jpeg">
@@ -275,7 +279,7 @@ html,body{
 <a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
 <a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif"></a>
 <a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif"></a>
-<a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Linkedin.gif"></a>
+<a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif"></a>
 </div>
 </div>
 
