@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Athul Mamachan</title>
+
+<!-- TAB ICON -->
 <link rel="icon" href="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile1.png" type="image/png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -13,7 +16,7 @@ html,body{
   font-family:Arial,Helvetica,sans-serif;
   background:#fff;
   color:#111;
-  overflow:hidden; /* desktop scroll handled by right panel */
+  overflow:hidden;
 }
 
 .container{
@@ -108,7 +111,6 @@ html,body{
 .small-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  grid-template-rows:repeat(2,1fr);
   gap:15px;
 }
 
@@ -121,40 +123,38 @@ html,body{
   cursor:pointer;
   border:2px solid #ddd;
   box-shadow:0 5px 15px rgba(0,0,0,.12);
-  transition:.25s;
 }
-
-/* SMALL CARD IMAGE – FIXED */
 .card-small img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .35s ease;
+  transition:.35s;
 }
-
-/* IMAGE ZOOM INSIDE CARD */
 .card-small:hover img{
   transform:scale(1.12);
 }
 
 /* CONTACT */
 .contact-section{
-  margin-top:100px;
+  margin-top:120px;
   text-align:center;
 }
 .contact-icons{
   margin-top:25px;
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:30px;
+}
+.contact-icons a{
+  display:inline-block;
 }
 .contact-icons img{
   width:50px;
   height:50px;
-  transition:.2s;
+  transition:.25s;
 }
 .contact-icons img:hover{
-  transform:scale(1.2);
+  transform:scale(1.25);
 }
 
 /* MODAL */
@@ -196,9 +196,9 @@ html,body{
   cursor:pointer;
 }
 
-/* RESPONSIVE - MOBILE */
+/* MOBILE FIX */
 @media(max-width:900px){
-  html, body{
+  html,body{
     height:auto;
     overflow:visible;
   }
@@ -208,25 +208,20 @@ html,body{
   }
   .left{
     position:relative;
-    top:auto;
     height:auto;
     padding:40px 20px;
   }
   .right{
-    padding:40px 20px;
     height:auto;
     overflow:visible;
+    padding:40px 20px;
   }
   .card-group{
     flex-direction:column;
-    gap:30px;
   }
   .card-big,.card-small{
     width:100%;
     height:auto;
-  }
-  .small-grid{
-    grid-template-columns:1fr 1fr;
   }
 }
 </style>
@@ -240,7 +235,7 @@ html,body{
 <aside class="left">
   <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile.jpeg" class="profile">
   <h1>Athul Mamachan</h1>
-  <h2> Video Editor </h2>
+  <h2>Video Editor</h2>
   <p>Turning raw footage into powerful stories with rhythm, emotion, and visual impact.</p>
 </aside>
 
@@ -299,10 +294,27 @@ html,body{
 <div class="contact-section">
 <h3>Contact Me</h3>
 <div class="contact-icons">
-<a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
-<a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif"></a>
-<a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif"></a>
-<a href="#"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif"></a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/vespera_films?igsh=OXpodDNwbnF1cjFi" target="_blank">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif">
+</a>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/918848347159" target="_blank">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif">
+</a>
+
+<!-- Gmail -->
+<a href="mailto:athulmamachan159@gmail.com">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif">
+</a>
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/in/athul-mamachan-298234376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif">
+</a>
+
 </div>
 </div>
 
