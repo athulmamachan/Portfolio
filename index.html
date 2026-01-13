@@ -81,7 +81,6 @@ html,body{
   margin-top:45px;
 }
 
-/* RESTORED BIG CARD SIZE */
 .card-big{
   width:457px;
   height:257px;
@@ -90,10 +89,6 @@ html,body{
   cursor:pointer;
   border:2px solid #ddd;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
-  transition:.25s;
-}
-.card-big:hover{
-  transform:scale(1.03);
 }
 .card-big img{
   width:100%;
@@ -106,7 +101,6 @@ html,body{
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
-
 .card-small{
   width:220px;
   height:120px;
@@ -187,54 +181,16 @@ html,body{
   cursor:pointer;
 }
 
-/* ===== MOBILE AUTO ADAPT (ALL PHONES) ===== */
-@media (max-width: 900px){
-
-.container{
-  grid-template-columns:1fr;
-}
-
-.left{
-  position:relative;
-  height:auto;
-  padding:40px 25px;
-}
-
-.right{
-  height:auto;
-  overflow:visible;
-  padding:40px 25px;
-}
-
-.card-group{
-  flex-direction:column;
-}
-
-/* Big card becomes fluid ONLY on mobile */
-.card-big{
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-}
-
-.small-grid{
-  grid-template-columns:repeat(2,1fr);
-}
-
-.card-small{
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-}
-
-/* Reels auto scale for all mobiles */
-.reels-grid{
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-}
-
-.modal iframe{
-  height:260px;
-}
+/* ===== MOBILE AUTO ADAPT ===== */
+@media (max-width:900px){
+.container{grid-template-columns:1fr}
+.left{position:relative;height:auto;padding:40px 25px}
+.right{height:auto;overflow:visible;padding:40px 25px}
+.card-group{flex-direction:column}
+.card-big{width:100%;height:auto;aspect-ratio:16/9}
+.card-small{width:100%;height:auto;aspect-ratio:16/9}
+.reels-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.modal iframe{height:260px}
 }
 </style>
 </head>
@@ -243,7 +199,6 @@ html,body{
 
 <div class="container">
 
-<!-- LEFT -->
 <aside class="left">
 <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile.jpeg" class="profile">
 <h1>Athul Mamachan</h1>
@@ -251,7 +206,6 @@ html,body{
 <p>Turning raw footage into powerful stories with rhythm, emotion, and visual impact.</p>
 </aside>
 
-<!-- RIGHT -->
 <main class="right">
 
 <!-- MUSIC VIDEO -->
@@ -270,7 +224,7 @@ html,body{
 </div>
 </div>
 
-<!-- SHORT FILM (RESTORED) -->
+<!-- SHORT FILM -->
 <div class="category">
 <h3>Short Film <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Clapper.gif" width="30"></h3>
 <div class="card-group">
@@ -286,7 +240,7 @@ html,body{
 </div>
 </div>
 
-<!-- REELS -->
+<!-- REELS (6 VIDEOS – FIXED) -->
 <div class="category">
 <h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram.gif" width="40"></h3>
 <div class="reels-grid">
@@ -295,6 +249,7 @@ html,body{
 <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/SQiSDv9lbk4')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Merry boy.jpeg"></div>
 <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/52M__lshDjo')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Ads2.jpeg"></div>
 <div class="reel-card" onclick="openModal('https://www.youtube.com/embed/GayB9FnuhGs')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Vespera.jpeg"></div>
+<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/526PxhYu5kk')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Dress.jpeg"></div>
 </div>
 </div>
 
@@ -302,8 +257,8 @@ html,body{
 <div class="contact-section">
 <h3>Contact Me</h3>
 <div class="contact-icons">
-<a href="https://www.instagram.com/vespera_films" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
-<a href="https://wa.me/918848347159" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif"></a>
+<a href="https://www.instagram.com/athul_mamachan?igsh=cWppeTNrNmd0Zzd2" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
+<a href="https://wa.me/919656854917" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif"></a>
 <a href="mailto:athulmamachan159@gmail.com"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif"></a>
 <a href="https://www.linkedin.com/in/athul-mamachan-298234376/" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif"></a>
 </div>
