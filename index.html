@@ -74,7 +74,7 @@ html,body{
   background:#111;
 }
 
-/* ===== MUSIC & SHORT FILM ===== */
+/* ===== MUSIC / FILM ===== */
 .card-group{
   display:flex;
   gap:20px;
@@ -240,7 +240,22 @@ html,body{
 </div>
 </div>
 
-<!-- REELS (6 VIDEOS – FIXED) -->
+<!-- FILMS (NEW CATEGORY) -->
+<div class="category">
+<h3>Films <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Clapper.gif" width="30"></h3>
+<div class="card-group">
+<div class="card-big" onclick="openModal('https://www.youtube.com/embed/REPLACE_FILM_1')">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/baby.jpeg">
+</div>
+<div class="small-grid">
+<div class="card-small" onclick="openModal('https://www.youtube.com/embed/REPLACE_FILM_2')">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/poga.jpeg">
+</div>
+</div>
+</div>
+</div>
+
+<!-- REELS -->
 <div class="category">
 <h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram.gif" width="40"></h3>
 <div class="reels-grid">
@@ -257,7 +272,7 @@ html,body{
 <div class="contact-section">
 <h3>Contact Me</h3>
 <div class="contact-icons">
-<a href="https://www.instagram.com/athul_mamachan?igsh=cWppeTNrNmd0Zzd2" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
+<a href="https://www.instagram.com/athul_mamachan" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
 <a href="https://wa.me/919656854917" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif"></a>
 <a href="mailto:athulmamachan159@gmail.com"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif"></a>
 <a href="https://www.linkedin.com/in/athul-mamachan-298234376/" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif"></a>
@@ -278,6 +293,7 @@ html,body{
 <script>
 const modal=document.getElementById("videoModal");
 const frame=document.getElementById("videoFrame");
+
 function openModal(url){
  frame.src=url+"?autoplay=1";
  modal.classList.add("show");
