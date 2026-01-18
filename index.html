@@ -86,7 +86,6 @@ html,body{
   height:257px;
   border-radius:12px;
   overflow:hidden;
-  cursor:pointer;
   border:2px solid #ddd;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
@@ -106,7 +105,6 @@ html,body{
   height:120px;
   border-radius:12px;
   overflow:hidden;
-  cursor:pointer;
   border:2px solid #ddd;
 }
 .card-small img{
@@ -210,9 +208,9 @@ html,body{
 
 <!-- MUSIC VIDEO -->
 <div class="category">
-<h3>Music Video <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/music icon.gif" width="30"></h3>
+<h3>Music Video</h3>
 <div class="card-group">
-<div class="card-big" onclick="openModal('https://www.youtube.com/embed/B9TItHSQsy8')">
+<div class="card-big">
 <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Queen.jpeg">
 </div>
 <div class="small-grid">
@@ -226,9 +224,9 @@ html,body{
 
 <!-- SHORT FILM -->
 <div class="category">
-<h3>Short Film <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Clapper.gif" width="30"></h3>
+<h3>Short Film</h3>
 <div class="card-group">
-<div class="card-big" onclick="openModal('https://www.youtube.com/embed/jf3TRh5UrX4')">
+<div class="card-big">
 <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Kali.jpeg">
 </div>
 <div class="small-grid">
@@ -240,16 +238,16 @@ html,body{
 </div>
 </div>
 
-<!-- FILMS (NEW CATEGORY) -->
+<!-- FILMS (IMAGES ONLY) -->
 <div class="category">
-<h3>Films <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Clapper.gif" width="30"></h3>
+<h3>Films</h3>
 <div class="card-group">
-<div class="card-big" onclick="openModal('https://www.youtube.com/embed/REPLACE_FILM_1')">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/baby.jpeg">
+<div class="card-big">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/poga.jpg">
 </div>
 <div class="small-grid">
-<div class="card-small" onclick="openModal('https://www.youtube.com/embed/REPLACE_FILM_2')">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/poga.jpeg">
+<div class="card-small">
+<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/baby.jpg">
 </div>
 </div>
 </div>
@@ -257,14 +255,14 @@ html,body{
 
 <!-- REELS -->
 <div class="category">
-<h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram.gif" width="40"></h3>
+<h3>Reels</h3>
 <div class="reels-grid">
-<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/R3-mUdWXMWU')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Reel.jpeg"></div>
-<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/LXER9LD1CF4')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Course.jpeg"></div>
-<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/SQiSDv9lbk4')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Merry boy.jpeg"></div>
-<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/52M__lshDjo')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Ads2.jpeg"></div>
-<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/GayB9FnuhGs')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Vespera.jpeg"></div>
-<div class="reel-card" onclick="openModal('https://www.youtube.com/embed/526PxhYu5kk')"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Dress.jpeg"></div>
+<div class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Reel.jpeg"></div>
+<div class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Course.jpeg"></div>
+<div class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Merry boy.jpeg"></div>
+<div class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Ads2.jpeg"></div>
+<div class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Vespera.jpeg"></div>
+<div class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Dress.jpeg"></div>
 </div>
 </div>
 
@@ -281,28 +279,6 @@ html,body{
 
 </main>
 </div>
-
-<!-- MODAL -->
-<div class="modal" id="videoModal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">×</span>
-<iframe id="videoFrame" allowfullscreen></iframe>
-</div>
-</div>
-
-<script>
-const modal=document.getElementById("videoModal");
-const frame=document.getElementById("videoFrame");
-
-function openModal(url){
- frame.src=url+"?autoplay=1";
- modal.classList.add("show");
-}
-function closeModal(){
- modal.classList.remove("show");
- frame.src="";
-}
-</script>
 
 </body>
 </html>
