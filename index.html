@@ -112,7 +112,7 @@ html,body{
   transform: scale(1.1);
 }
 
-/* Play overlay */
+/* Play icon */
 
 .card-big::after,
 .card-small::after,
@@ -136,7 +136,7 @@ html,body{
   opacity:1;
 }
 
-/* Big cards */
+/* BIG CARD */
 
 .card-big{
   width:420px;
@@ -156,7 +156,7 @@ html,body{
   box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
 
-/* REELS HORIZONTAL SCROLL */
+/* REELS */
 
 .reels-grid{
   margin-top:45px;
@@ -164,25 +164,15 @@ html,body{
   gap:20px;
   overflow-x:auto;
   flex-wrap:nowrap;
-  padding-bottom:10px;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
 }
 
 .reel-card{
-  min-width:220px;
-  height:390px;
+  flex:0 0 auto;
+  width:180px;
   aspect-ratio:9/16;
   box-shadow:0 4px 12px rgba(0,0,0,.12);
-}
-
-/* Hide scrollbar (optional) */
-
-.reels-grid::-webkit-scrollbar{
-  height:6px;
-}
-
-.reels-grid::-webkit-scrollbar-thumb{
-  background:#ccc;
-  border-radius:10px;
 }
 
 /* CONTACT */
@@ -240,9 +230,14 @@ height:auto;
 aspect-ratio:16/9
 }
 
+/* keep original mobile reel layout but scrollable */
+
+.reels-grid{
+overflow-x:auto;
+}
+
 .reel-card{
-min-width:160px;
-height:280px
+min-width:120px;
 }
 
 }
@@ -257,7 +252,7 @@ height:280px
 <aside class="left">
 <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile.jpeg" class="profile">
 <h1>Athul Mamachan</h1>
-<h2>Editor | Colorist</h2>
+<h2> Editor | Colorist </h2>
 <p>Turning raw footage into powerful stories with rhythm, emotion, and visual impact.</p>
 </aside>
 
