@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Athul Mamachan</title>
-<link rel="icon" href="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile1.png" type="image/png">
+<link rel="icon" href="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Profile1.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -78,47 +78,48 @@ html,body{
   overflow:hidden;
   border:2px solid #ddd;
   cursor:pointer;
-  transition: transform 0.3s ease;
 }
 .card-big img, .card-small img, .reel-card img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition: transform 0.3s ease;
 }
-/* Hover zoom effect */
-.card-big:hover img,
-.card-small:hover img,
-.reel-card:hover img{
-  transform: scale(1.1);
+/* BIG */
+.card-big{
+  width:420px;
+  height:235px;
+  box-shadow:0 6px 16px rgba(0,0,0,.14);
 }
-/* Pop-up overlay */
-.card-big::after,
-.card-small::after,
-.reel-card::after{
-  content:"\25B6"; /* Play symbol */
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%) scale(0);
-  font-size:48px;
-  color:rgba(255,255,255,0.8);
-  pointer-events:none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity:0;
+/* SMALL */
+.small-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
 }
-.card-big:hover::after,
-.card-small:hover::after,
-.reel-card:hover::after{
-  transform:translate(-50%,-50%) scale(1);
-  opacity:1;
+.card-small{
+  width:200px;
+  height:110px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
-/* Big and small card sizes */
-.card-big{width:420px;height:235px;box-shadow:0 6px 16px rgba(0,0,0,.14);}
-.small-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.card-small{width:200px;height:110px;box-shadow:0 4px 12px rgba(0,0,0,.12);}
-.reels-grid{margin-top:45px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.reel-card{aspect-ratio:9/16;box-shadow:0 4px 12px rgba(0,0,0,.12);}
+/* REELS - 3 per row on laptop */
+.reels-grid{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(3, 236px);
+  gap:20px;
+}
+.reel-card{
+  width:236px;
+  height:236px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+/* SHORT STORY - 2 cards, same size as reels */
+.short-story-grid{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(2, 236px);
+  gap:20px;
+}
 /* CONTACT */
 .contact-section{
   margin:120px 0 60px;
@@ -131,85 +132,171 @@ html,body{
   gap:25px;
 }
 .contact-icons img{width:50px;height:50px;}
+/* ─── HOVER EFFECT for clickable video cards only ─── */
+a.card-big img,
+a.reel-card img {
+  transition: transform 0.35s ease;
+}
+a.card-big:hover img,
+a.reel-card:hover img {
+  transform: scale(1.07);
+}
+a.card-big::before,
+a.reel-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.35s ease;
+  z-index: 1;
+  border-radius: 12px;
+}
+a.card-big:hover::before,
+a.reel-card:hover::before {
+  background: rgba(0,0,0,0.38);
+}
+a.card-big::after,
+a.reel-card::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  font-size: 36px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+a.card-big:hover::after,
+a.reel-card:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
 /* MOBILE */
 @media (max-width:900px){
-.container{grid-template-columns:1fr}
-.left{position:relative;height:auto;padding:40px 25px}
-.right{height:auto;overflow:visible;padding:40px 25px}
+.container{
+  grid-template-columns:1fr;
+}
+.left{
+  position:relative;
+  height:auto;
+  padding:40px 25px;
+}
+.right{
+  height:auto;
+  overflow:visible;
+  padding:40px 25px;
+}
 .card-group{flex-direction:column}
-.card-big{width:100%;height:auto;aspect-ratio:16/9}
-.card-small{width:100%;height:auto;aspect-ratio:16/9}
-.reels-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.card-big{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+}
+.card-small{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+}
+.reels-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.reel-card{
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1;
+}
+.short-story-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
 }
 </style>
 </head>
 <body>
 <div class="container">
+<!-- LEFT -->
 <aside class="left">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Profile.jpeg" class="profile">
+<img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Profile.jpeg" class="profile">
 <h1>Athul Mamachan</h1>
-<h2> Editor | Colorist </h2>
+<h2>Video Editor</h2>
 <p>Turning raw footage into powerful stories with rhythm, emotion, and visual impact.</p>
 </aside>
+<!-- RIGHT -->
 <main class="right">
 <!-- MUSIC VIDEO -->
 <div class="category">
-<h3>Music Video <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/music%20icon.gif"></h3>
+<h3>Music Video <img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/music%20icon.gif"></h3>
 <div class="card-group">
-<a href="https://www.youtube.com/embed/B9TItHSQsy8" target="_blank" class="card-big">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Queen.jpeg">
+<a href="https://www.youtube.com/watch?v=B9TItHSQsy8" target="_blank" class="card-big">
+<img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Queen.jpeg">
 </a>
 <div class="small-grid">
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Cap.jpeg"></div>
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Singer.jpeg"></div>
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Mask.jpeg"></div>
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Queen1.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Cap.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Singer.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Mask.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Queen1.jpeg"></div>
 </div>
 </div>
 </div>
 <!-- SHORT FILM -->
 <div class="category">
-<h3>Short Film <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Clapper.gif"></h3>
+<h3>Short Film <img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Clapper.gif"></h3>
 <div class="card-group">
-<a href="https://www.youtube.com/embed/jf3TRh5UrX4" target="_blank" class="card-big">
-<img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Kali.jpeg">
+<a href="https://www.youtube.com/watch?v=jf3TRh5UrX4" target="_blank" class="card-big">
+<img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Kali.jpeg">
 </a>
 <div class="small-grid">
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/2man.jpeg"></div>
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/1man.jpeg"></div>
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/3man.jpeg"></div>
-<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Blood.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/2man.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/1man.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/3man.jpeg"></div>
+<div class="card-small"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Blood.jpeg"></div>
 </div>
 </div>
 </div>
 <!-- FILMS -->
 <div class="category">
-<h3>Films <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Clapper.gif"></h3>
+<h3>Films <img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Clapper.gif"></h3>
 <div class="card-group">
-<div class="card-big"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/baby.jpg"></div>
-<div class="card-big"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/poga.jpg"></div>
+<div class="card-big"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/baby.jpg"></div>
+<div class="card-big"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/poga.jpg"></div>
+</div>
+</div>
+<!-- SHORT STORY -->
+<div class="category">
+<h3>Short Story <img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Instagram.gif"></h3>
+<div class="short-story-grid">
+<a href="https://www.instagram.com/reel/DUw-BrNEy9r/?igsh=bmcyaGt6b2FmY3hp" target="_blank" class="reel-card">
+<img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/ShortStory1.jpg">
+</a>
+<a href="https://www.instagram.com/reel/DVu8w-JE6ty/?igsh=M3hkcWZvcjhhZjEz" target="_blank" class="reel-card">
+<img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/ShortStory2.jpg">
+</a>
 </div>
 </div>
 <!-- REELS -->
 <div class="category">
-<h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram.gif"></h3>
+<h3>Reels <img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Instagram.gif"></h3>
 <div class="reels-grid">
-<a href="https://www.youtube.com/embed/R3-mUdWXMWU" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Reel.jpeg"></a>
-<a href="https://www.youtube.com/embed/LXER9LD1CF4" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Course.jpeg"></a>
-<a href="https://www.youtube.com/embed/LXER9LD1CF4" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Merry%20boy.jpeg"></a>
-<a href="https://www.youtube.com/embed/52M__lshDjo" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Ads2.jpeg"></a>
-<a href="https://www.youtube.com/embed/GayB9FnuhGs" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Vespera.jpeg"></a>
-<a href="https://www.youtube.com/embed/526PxhYu5kk" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Dress.jpeg"></a>
+<a href="https://www.youtube.com/watch?v=R3-mUdWXMWU" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Reel.jpeg"></a>
+<a href="https://www.youtube.com/watch?v=LXER9LD1CF4" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Course.jpeg"></a>
+<a href="https://www.youtube.com/watch?v=SQiSDv9lbk4" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Merry%20boy.jpeg"></a>
+<a href="https://www.youtube.com/watch?v=52M__lshDjo" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Ads2.jpeg"></a>
+<a href="https://www.youtube.com/watch?v=GayB9FnuhGs" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Vespera.jpeg"></a>
+<a href="https://www.youtube.com/watch?v=526PxhYu5kk" target="_blank" class="reel-card"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Dress.jpeg"></a>
 </div>
 </div>
 <!-- CONTACT -->
 <div class="contact-section">
 <h3>Contact Me</h3>
 <div class="contact-icons">
-<a href="https://www.instagram.com/athul_mamachan?igsh=MWZpcTJpbnhya2hvdw==" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Instagram1.gif"></a>
-<a href="https://wa.me/919656854917" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Whatsapp.gif"></a>
-<a href="mailto:athulmamachan159@gmail.com"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/Gmail.gif"></a>
-<a href="https://www.linkedin.com/in/athul-mamachan-298234376/" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/portfolio/main/Source/LinkedIn.gif"></a>
+<a href="https://www.instagram.com/athul_mamachan" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Instagram1.gif"></a>
+<a href="https://wa.me/919656854917" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Whatsapp.gif"></a>
+<a href="mailto:athulmamachan@gmail.com"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/Gmail.gif"></a>
+<a href="https://www.linkedin.com/in/athul-mamachan-298234376/" target="_blank"><img src="https://raw.githubusercontent.com/athulmamachan/Portfolio/main/Source/LinkedIn.gif"></a>
 </div>
 </div>
 </main>
